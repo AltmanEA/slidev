@@ -1,0 +1,19 @@
+# pnpm configuration for Slidev Course Manager
+
+# Enable hoisting for better compatibility
+hoist=true
+
+# Enable strict peer dependencies
+strict-peer-dependencies=false
+
+# Cache directory
+cache-dir=~/.pnpm-store
+
+# Registry
+registry=https://registry.npmjs.org/
+
+# Enable automatic installation of peer dependencies
+auto-install-peers=true
+
+# Enable pnpm to use symlinks instead of hard links
+symlink=true

@@ -1,0 +1,142 @@
+{
+  "name": "slidev-course-manager",
+  "displayName": "Slidev Course Manager",
+  "description": "VS Code extension for managing educational courses composed of Slidev presentations",
+  "version": "1.0.0",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:slidev-course-manager.refreshCourseExplorer"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "courseExplorer",
+          "name": "Course Explorer"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "slidev-course-manager.refreshCourseExplorer",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "slidev-course-manager.createLecture",
+        "title": "Create New Lecture",
+        "icon": "$(add)"
+      },
+      {
+        "command": "slidev-course-manager.openLectureSource",
+        "title": "Open Lecture Source"
+      },
+      {
+        "command": "slidev-course-manager.startDevelopmentServer",
+        "title": "Start Development Server"
+      },
+      {
+        "command": "slidev-course-manager.buildLecture",
+        "title": "Build Lecture"
+      },
+      {
+        "command": "slidev-course-manager.buildCourse",
+        "title": "Build Course"
+      },
+      {
+        "command": "slidev-course-manager.viewCourse",
+        "title": "View Course"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "slidev-course-manager.refreshCourseExplorer",
+          "when": "view == courseExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "slidev-course-manager.createLecture",
+          "when": "view == courseExplorer",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "slidev-course-manager.openLectureSource",
+          "when": "view == courseExplorer && viewItem == lecture",
+          "group": "navigation"
+        },
+        {
+          "command": "slidev-course-manager.startDevelopmentServer",
+          "when": "view == courseExplorer && viewItem == lecture",
+          "group": "navigation"
+        },
+        {
+          "command": "slidev-course-manager.buildLecture",
+          "when": "view == courseExplorer && viewItem == lecture",
+          "group": "navigation"
+        },
+        {
+          "command": "slidev-course-manager.buildCourse",
+          "when": "view == courseExplorer && viewItem == course",
+          "group": "navigation"
+        },
+        {
+          "command": "slidev-course-manager.viewCourse",
+          "when": "view == courseExplorer && viewItem == course",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "test:unit": "npx mocha out/test/suite/unit.test.js out/test/suite/utilities.test.js --reporter spec",    
+    "test:watch": "npm run test:unit -- --watch",
+    "test:coverage": "c8 npm run test:unit",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "postinstall": "pnpm run compile"
+  },
+  "devDependencies": {
+    "@types/chai": "^5.2.3",
+    "@types/fs-extra": "^11.0.4",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.3.0",
+    "@vscode/vsce": "^2.19.0",
+    "c8": "^8.0.0",
+    "chai": "^5.0.0",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "pnpm": "^8.6.0",
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@slidev/types": "^0.47.0",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^11.1.1",
+    "gray-matter": "^4.0.3"
+  }
+}
