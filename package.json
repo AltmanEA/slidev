@@ -104,7 +104,7 @@
     "pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",
-    "test:unit": "npx mocha out/test/suite/unit.test.js out/test/suite/utilities.test.js --reporter spec",    
+    "test:unit": "npx mocha out/test/suite/unit.test.js out/test/suite/utilities.test.js out/test/suite/lectureDiscovery.test.js --reporter spec",    
     "test:watch": "npm run test:unit -- --watch",
     "test:coverage": "c8 npm run test:unit",
     "package": "vsce package",
