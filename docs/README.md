@@ -13,6 +13,7 @@
 **Документация по тестированию**
 - [TESTING_LECTURE_DISCOVERY.md](./tests/TESTING_LECTURE_DISCOVERY.md) - тестирование LectureDiscoveryService
 - [TESTING_FRONTMATTER_PARSER.md](./tests/TESTING_FRONTMATTER_PARSER.md) - тестирование FrontmatterParser
+- [TESTING_LECTURE_ENVIRONMENT_MANAGER.md](./tests/TESTING_LECTURE_ENVIRONMENT_MANAGER.md) - тестирование LectureEnvironmentManager
 
 ## Связанные файлы
 

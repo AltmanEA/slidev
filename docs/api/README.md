@@ -25,11 +25,15 @@
 - **LectureDiscoveryService** - обнаружение и валидация лекций
 - **CourseService** - управление курсами
 - **FileService** - работа с файловой системой
+- **LectureEnvironmentManager** - управление окружением Slidev лекций
 
 ### Типы данных
 - **Lecture** - структура данных лекции
 - **Course** - структура курса
 - **DiscoveryResult** - результат обнаружения лекций
+- **EnvironmentInfo** - информация об окружении лекции
+- **DevServerResult** - результат запуска dev server
+- **BuildResult** - результат сборки лекции
 
 ### Утилиты
 - **PathUtils** - утилиты для работы с путями
@@ -45,6 +49,6 @@
 
 ## Связанные файлы
 
-- [Руководство разработчика](../guides/developer-guide.md)
 - [Документация по тестированию](../tests/README.md)
+- [План разработки](../DEVELOPMENT_PLAN.md)
 - [Основной README](../../README.md)
