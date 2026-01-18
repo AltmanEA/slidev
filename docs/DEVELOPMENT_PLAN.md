@@ -36,15 +36,16 @@
    - Поддержка npm/pnpm
 
 ### Этап 4: UI реализация (60 мин)
-1. **Tree Data Provider**
+1. **Tree Data Provider** ✅
    - Course Node (корень курса)
-   - Lecture Group Node (группировка)
+   - Lecture Group Node (группировка по буквам)
    - Lecture Node (отдельная лекция)
 
-2. **View Container и Commands**
-   - Регистрация в Activity Bar
-   - Команды: открыть лекцию, dev server, build
-   - Refresh логика
+2. **View Container и Commands** ✅
+   - Регистрация в Activity Bar (slidev-course-container)
+   - Команды: refresh, create, open, dev, build, delete, reveal
+   - Контекстные меню для разных типов узлов
+   - File watcher для auto-refresh при изменениях файлов
 
 ### Этап 5: Интеграция и тестирование (30 мин)
 1. Связывание UI с core логикой

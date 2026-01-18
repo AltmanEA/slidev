@@ -12,18 +12,28 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "slidev-course-container",
+          "title": "Slidev Course",
+          "icon": "resources/icons/slidev-icon.svg"
+        }
+      ]
+    },
     "views": {
-      "explorer": [
+      "slidev-course-container": [
         {
           "id": "courseExplorer",
-          "name": "Course Explorer"
+          "name": "Course Explorer",
+          "icon": "resources/icons/slidev-icon.svg"
         }
       ]
     },
     "commands": [
       {
         "command": "slidev-course-manager.refreshCourseExplorer",
-        "title": "Refresh",
+        "title": "Refresh Course",
         "icon": "$(refresh)"
       },
       {
@@ -33,23 +43,38 @@
       },
       {
         "command": "slidev-course-manager.openLectureSource",
-        "title": "Open Lecture Source"
+        "title": "Open Source",
+        "icon": "$(go-to-file)"
       },
       {
         "command": "slidev-course-manager.startDevelopmentServer",
-        "title": "Start Development Server"
+        "title": "Start Dev Server",
+        "icon": "$(play)"
       },
       {
         "command": "slidev-course-manager.buildLecture",
-        "title": "Build Lecture"
+        "title": "Build Lecture",
+        "icon": "$(gear)"
       },
       {
         "command": "slidev-course-manager.buildCourse",
-        "title": "Build Course"
+        "title": "Build Course",
+        "icon": "$(package)"
       },
       {
         "command": "slidev-course-manager.viewCourse",
-        "title": "View Course"
+        "title": "Preview Course",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "slidev-course-manager.deleteLecture",
+        "title": "Delete Lecture",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "slidev-course-manager.revealInExplorer",
+        "title": "Reveal in Explorer",
+        "icon": "$(folder-opened)"
       }
     ],
     "menus": {
@@ -69,27 +94,42 @@
         {
           "command": "slidev-course-manager.openLectureSource",
           "when": "view == courseExplorer && viewItem == lecture",
-          "group": "navigation"
+          "group": "inline@1"
         },
         {
           "command": "slidev-course-manager.startDevelopmentServer",
           "when": "view == courseExplorer && viewItem == lecture",
-          "group": "navigation"
+          "group": "inline@2"
         },
         {
           "command": "slidev-course-manager.buildLecture",
           "when": "view == courseExplorer && viewItem == lecture",
-          "group": "navigation"
+          "group": "inline@3"
+        },
+        {
+          "command": "slidev-course-manager.revealInExplorer",
+          "when": "view == courseExplorer && viewItem == lecture",
+          "group": "inline@4"
+        },
+        {
+          "command": "slidev-course-manager.deleteLecture",
+          "when": "view == courseExplorer && viewItem == lecture",
+          "group": "inline@5"
         },
         {
           "command": "slidev-course-manager.buildCourse",
           "when": "view == courseExplorer && viewItem == course",
-          "group": "navigation"
+          "group": "inline@1"
         },
         {
           "command": "slidev-course-manager.viewCourse",
           "when": "view == courseExplorer && viewItem == course",
-          "group": "navigation"
+          "group": "inline@2"
+        },
+        {
+          "command": "slidev-course-manager.createLecture",
+          "when": "view == courseExplorer && viewItem == course",
+          "group": "inline@3"
         }
       ]
     }
